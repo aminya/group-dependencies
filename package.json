@@ -1,6 +1,6 @@
 {
-  "name": "group-dependencies",
   "version": "0.0.10",
+  "name": "@aminya/group-dependencies",
   "description": "Allows for specifying specific non-production packages to install, for use in an environment that only installs production variables ie; heroku.",
   "main": "index.js",
   "scripts": {
@@ -9,12 +9,12 @@
   "bin": {
     "deps": "./bin/deps.js"
   },
-  "repository": "itsthatguy/group-dependencies",
+  "repository": "aminya/group-dependencies",
   "bugs": {
-    "url": "https://github.com/itsthatguy/group-dependencies/issues",
-    "email": "kevin@itsthatguy.com"
+    "url": "https://github.com/aminya/group-dependencies/issues",
+    "email": "aminyahyaabadi74@gmail.com"
   },
-  "author": "Kevin Altman <kevin@itsthatguy.com>",
+  "author": "Kevin Altman <kevin@itsthatguy.com>, Amin Yahyaabadi <aminyahyaabadi74@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0"
