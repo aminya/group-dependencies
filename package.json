@@ -17,7 +17,8 @@
   "author": "Kevin Altman <kevin@itsthatguy.com>, Amin Yahyaabadi <aminyahyaabadi74@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "file-it": "^1.0.24"
   },
   "devDependencies": {
     "intercept-stdout": "^0.1.2",
