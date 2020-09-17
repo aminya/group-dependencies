@@ -2,13 +2,13 @@
 [![CircleCI](https://circleci.com/gh/itsthatguy/group-dependencies/tree/master.svg?style=svg)](https://circleci.com/gh/itsthatguy/group-dependencies/tree/master) [![npm version](https://badge.fury.io/js/group-dependencies.svg)](https://badge.fury.io/js/group-dependencies)
 
 
-With group-dependencies, you can declare your build dependencies in a separate
-property, `buildDependencies`, and install only those packages as needed, by
-adding to `"scripts": { "heroku-postbuild": deps install build" }`
-to your `package.json`.
+With group-dependencies, you can group your dependencies in different batches. For exmaple, you can have a "buildDependencies" or "lintDependencies". This is very useful when you don't need to install all the dependencies for a certain task. Using this you can save a lot of time in CI.
+
+For example, put build dependencies in a separate property, `buildDependencies`, and install only those packages as needed, by adding to `"scripts": { "heroku-postbuild": deps install build" }` to your `package.json`.
 
 ## Installation
 
+You need to install this package globally, if you want to use it on a clean directory:
 ```
 npm install @aminya/group-dependencies -g
 ```
