@@ -1,15 +1,6 @@
 # group-dependencies
 [![CircleCI](https://circleci.com/gh/itsthatguy/group-dependencies/tree/master.svg?style=svg)](https://circleci.com/gh/itsthatguy/group-dependencies/tree/master) [![npm version](https://badge.fury.io/js/group-dependencies.svg)](https://badge.fury.io/js/group-dependencies)
 
-## What
-
-**npm** gives you two groups to specify dependencies (i.e. dev and prod).
-In the real world, we have multiple dependency environments (e.g. test, build,
-production, development).
-
-Let’s say you run webpack on heroku to build your app. There are 2 options:
-1. Set `heroku config:set NPM_CONFIG_PRODUCTION=false` to install all dependencies (including testing dependencies)
-2. Put your build dependencies in `dependencies` (i.e. production environment)
 
 With group-dependencies, you can declare your build dependencies in a separate
 property, `buildDependencies`, and install only those packages as needed, by
@@ -19,7 +10,7 @@ to your `package.json`.
 ## Installation
 
 ```
-npm install group-dependencies
+npm install @aminya/group-dependencies -g
 ```
 
 ## Usage
@@ -54,6 +45,12 @@ deps install test
 deps install [GROUP_NAME]
 ```
 
+## Why
+
+**npm** gives you two groups to specify dependencies (i.e. dev and prod).
+In the real world, we have multiple dependency environments (e.g. test, build,
+production, development).
+
 ### How it works
 
 Any item added to the `[GROUP_NAME]Dependencies` property will be installed with
@@ -72,3 +69,7 @@ The decision to use this strategy, with an array, was made so that we can
 leverage a few things.
 1. In your development environment, let `npm` manage installing your dev dependencies.
 2. You only need to manage package versions in one location, reducing the overhead.
+
+Behind the scenes, it makes a new package.json, and then uses that for installation. Once the installation is done, it restores the original package.json.
+
+It is also capable of using group-specific lock files, which can speed up the installation process.
